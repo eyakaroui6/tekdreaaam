@@ -1,0 +1,204 @@
+/* Page Header */
+.page-header {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Psychologists Grid Layout */
+.psychologists-grid {
+    padding: 4rem 0;
+    background: var(--background-light);
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Psychologist Cards */
+.psychologists-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.psychologist-card {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.psychologist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.psychologist-card img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.psychologist-info {
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.psychologist-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.specialty {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Feedback Section */
+.feedback-section {
+    background: var(--white);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    position:absolute;
+    right: 2rem;
+    top: 600PX;
+    width: 25%;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+}
+ 
+.feedback-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.feedback-form {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    height: 120px;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.feedback-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px #f4b300;
+}
+
+.feedback-form button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.feedback-form button:hover {
+    background: var(--primary-dark);
+}
+
+.feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    padding: 1rem;
+    border-radius: 0.5rem;
+    
+}
+.feedback-box{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #4e72df50;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+}
+
+.feedback-item {
+    background: var(--background-light);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    box-shadow: var(--shadow-sm);
+}
+
+.feedback-item .date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .feedback-section {
+        position: static;
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .psychologist-card {
+        flex-direction: column;
+    }
+
+    .psychologist-card img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}

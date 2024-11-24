@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meet.css"> 
+    <style>
+        .meet-section, .container {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1200px; /* Largeur maximale pour éviter une trop grande étendue */
+            padding-left: 20px; /* Ajout d'un peu de padding pour l'intérieur */
+            padding-right: 20px;
+        }
+
+        /* Ajuster les marges pour les petits écrans */
+        @media (max-width: 768px) {
+            .meet-section, .container {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+        }
+
+        /* Box container */
+        .box {
+            display: flex;
+            justify-content: center; /* Centre horizontalement */
+            align-items: center; /* Centre verticalement */
+            width: 300px;
+            height: 300px; /* Augmenter la hauteur pour s'assurer que le bouton a de l'espace */
+            background-color: #f0f0f0;
+        }
+
+        /* Conteneur de formulaire */
+        .form-wrapper {
+            display: flex;
+            flex-direction: column; /* Aligne les éléments du formulaire verticalement */
+            justify-content: center; /* Centre les éléments verticalement */
+            align-items: center; /* Centre horizontalement les éléments */
+            height: 100%; /* Remplir toute la hauteur du conteneur */
+            margin-right: 30px; /* Marge à droite pour l'écart avec l'image */
+        }
+
+        /* Style du bouton Planifier */
+        form button {
+            margin-top: 20px; /* Marge pour espacer le bouton des autres éléments */
+            padding: 10px 20px; /* Taille du bouton */
+            background-color: #5495bee8; /* Couleur du bouton */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #5495bee8; /* Couleur du bouton au survol */
+        }
+
+        /* Sections */
+        .section {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            margin-top: 100px;
+        }
+
+        /* Conteneur principal */
+        .main-container {
+            padding-top: 50px;
+            margin-top: 20px;
+        }
+
+        /* Décalage global de la page */
+        body {
+            margin-top: 90px;
+        }
+
+        /* Styles pour les boutons généraux */
+        .btn {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 8rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .agenda-image {
+            text-align: center;
+            margin-bottom: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Flexbox pour aligner l'image à droite du formulaire */
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Assure que tout s'ajuste bien sur les petits écrans */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="MindWell Home">شوفلي حل</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="psychologists.html" class="nav-link">Our Psychologists</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="articles.html" class="nav-link">ثقف نفسك</a></li>
+                    <li><a href="stories.html" class="nav-link">احكيلي</a></li>
+                    <li><a href="meet.html" class="nav-link">فرغ قلبك</a></li>
+                    <button class="login-btn">Login</button>
+                    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="meet-section">
+            <div class="container">
+                <h1>Planifier une Rencontre</h1>
+                <div class="form-container">
+                    <div class="form-wrapper">
+                        <form id="meetForm">
+                            <div class="form-group">
+                                <label for="meetTitle">Sujet de la Rencontre</label>
+                                <input type="text" id="meetTitle" name="meetTitle" placeholder="Entrez le sujet">
+                            </div>
+                            <div class="form-group">
+                                <label for="meetDate">Date</label>
+                                <input type="date" id="meetDate" name="meetDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="meetTime">Heure</label>
+                                <input type="time" id="meetTime" name="meetTime">
+                            </div>
+                            <button type="submit">Planifier</button>
+                        </form>
+                    </div>
+                    <div class="agenda-image">
+                        <img src="img\agenda 2.jpeg" alt="Agenda">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('meetForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const meetTitle = document.getElementById('meetTitle').value;
+            const meetDate = document.getElementById('meetDate').value;
+            const meetTime = document.getElementById('meetTime').value;
+
+            if (meetTitle && meetDate && meetTime) {
+                alert(Rencontre planifiée :\nSujet : ${meetTitle}\nDate : ${meetDate}\nHeure : ${meetTime});
+            } else {
+                alert('Veuillez remplir tous les champs.');
+            }
+        });
+    </script>
+</body>
+</html>

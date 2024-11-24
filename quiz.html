@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Quiz - MindWell Psychology</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="MindWell Home">شوفلي حل</a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="psychologists.html" class="nav-link">Our Psychologists</a></li>
+                    <li><a href="quiz.html" class="nav-link">Quiz</a></li>
+                    <li><a href="articles.html" class="nav-link">ثقف نفسك</a></li>
+                    <li><a href="stories.html" class="nav-link">احكيلي</a></li>
+                    <li><a href="meet.html" class="nav-link">فرغ قلبك</a></li>
+                    <button class="login-btn">Login</button>
+                    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="quiz-section">
+            <div class="container">
+                <h1>Mental Health Assessment Quiz</h1>
+                <p class="quiz-intro">This quiz helps us understand your needs better. Your answers are confidential.</p>
+
+                <form id="quizForm" class="quiz-form">
+                    <div class="question-box">
+                        <h3>1. How old are you?</h3>
+                        <input type="number" min="0" max="120" required>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>2. Are you a student?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="student" value="yes" required> Yes</label>
+                            <label><input type="radio" name="student" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>3. How would you rate your current stress level?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="stress" value="1" required> Low</label>
+                            <label><input type="radio" name="stress" value="2"> Moderate</label>
+                            <label><input type="radio" name="stress" value="3"> High</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>4. How often do you feel anxious?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="anxiety" value="1" required> Rarely</label>
+                            <label><input type="radio" name="anxiety" value="2"> Sometimes</label>
+                            <label><input type="radio" name="anxiety" value="3"> Often</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>5. How would you rate your sleep quality?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="sleep" value="1" required> Poor</label>
+                            <label><input type="radio" name="sleep" value="2"> Fair</label>
+                            <label><input type="radio" name="sleep" value="3"> Good</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>6. Do you have someone to talk to when feeling down?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="support" value="yes" required> Yes</label>
+                            <label><input type="radio" name="support" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>7. How often do you exercise?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="exercise" value="1" required> Never</label>
+                            <label><input type="radio" name="exercise" value="2"> 1-2 times/week</label>
+                            <label><input type="radio" name="exercise" value="3"> 3+ times/week</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>8. How would you rate your work-life balance?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="balance" value="1" required> Poor</label>
+                            <label><input type="radio" name="balance" value="2"> Fair</label>
+                            <label><input type="radio" name="balance" value="3"> Good</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>9. Have you sought mental health support before?</h3>
+                        <div class="radio-group">
+                            <label><input type="radio" name="previous" value="yes" required> Yes</label>
+                            <label><input type="radio" name="previous" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="question-box">
+                        <h3>10. What are your primary concerns?</h3>
+                        <textarea required placeholder="Please share your thoughts..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Quiz</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MindWell Psychology. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for completing the quiz. A mental health professional will review your responses and contact you soon.');
+        });
+    </script>
+</body>
+</html>
